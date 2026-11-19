@@ -1,0 +1,151 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloom Flower - Quản trị</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+    <!-- ĐĂNG NHẬP -->
+    <div class="login-box" id="login-box">
+
+        <h1>🌸 Bloom Flower</h1>
+        <h2>Đăng nhập quản trị</h2>
+
+        <form id="login-form">
+            <input
+                type="password"
+                id="admin-password"
+                placeholder="Nhập mật khẩu quản trị"
+                required>
+
+            <button type="submit">Đăng nhập</button>
+        </form>
+
+        <p id="login-message"></p>
+
+    </div>
+
+
+    <!-- TRANG QUẢN TRỊ -->
+    <div class="dashboard" id="dashboard" hidden>
+
+        <header>
+            <h1>🌸 Bloom Flower Admin</h1>
+            <button id="logout-btn">Đăng xuất</button>
+        </header>
+
+        <nav>
+            <button data-tab="products">Quản lý sản phẩm</button>
+            <button data-tab="orders">Quản lý đơn hàng</button>
+        </nav>
+        
+        <!-- THỐNG KÊ QUẢN TRỊ -->
+        <section id="stats-section">
+
+            <h2>📊 Thống kê quản trị</h2>
+
+            <div class="stats-container">
+
+                <div class="admin-card">
+                    <h3>Tổng đơn hàng</h3>
+                    <p id="total-orders">0</p>
+                </div>
+
+                <div class="admin-card">
+                    <h3>Doanh thu</h3>
+                    <p id="total-revenue">0đ</p>
+                </div>
+
+                <div class="admin-card">
+                    <h3>Đơn chờ xác nhận</h3>
+                    <p id="pending-orders">0</p>
+                </div>
+
+                <div class="admin-card">
+                    <h3>Đơn hoàn thành</h3>
+                    <p id="completed-orders">0</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- QUẢN LÝ SẢN PHẨM -->
+        <section id="products-tab">
+
+            <h2>Quản lý sản phẩm</h2>
+
+            <form id="product-form">
+
+                <input type="hidden" id="product-id">
+
+                <input
+                    type="text"
+                    id="product-name"
+                    placeholder="Tên sản phẩm"
+                    required>
+
+                <input
+                    type="number"
+                    id="product-price"
+                    placeholder="Giá tiền"
+                    min="0"
+                    step="1"
+                    required>
+
+                <input
+                    type="text"
+                    id="product-image"
+                    placeholder="Đường dẫn hình ảnh">
+
+                <input
+                    type="number"
+                    id="product-stock"
+                    placeholder="Số lượng tồn kho"
+                    min="0"
+                    step="1"
+                    value="0"
+                    required>
+
+                <textarea
+                    id="product-description"
+                    placeholder="Mô tả sản phẩm">
+                </textarea>
+
+                <button type="submit" id="save-product">
+                    Thêm sản phẩm
+                </button>
+
+                <button type="button" id="cancel-edit">
+                    Làm mới
+                </button>
+
+            </form>
+
+            <h3>Danh sách sản phẩm</h3>
+
+            <div id="product-list"></div>
+
+        </section>
+
+
+        <!-- QUẢN LÝ ĐƠN HÀNG -->
+        <section id="orders-tab" hidden>
+
+            <h2>Quản lý đơn hàng</h2>
+
+            <div id="order-list"></div>
+
+        </section>
+
+    </div>
+
+    <script src="admin.js?v=3"></script>
+
+</body>
+</html>

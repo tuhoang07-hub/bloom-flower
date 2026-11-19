@@ -1,0 +1,257 @@
+
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bloom Flower - Cửa hàng hoa tươi</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="logo">🌸 Bloom Flower</div>
+
+        <nav class="navbar">
+            <a href="#home">Trang chủ</a>
+            <a href="#categories">Danh mục</a>
+            <a href="#products">Sản phẩm</a>
+            <a href="#contact">Liên hệ</a>
+        </nav>
+
+        <div class="cart" onclick="toggleCart()">
+    🛒 Giỏ hàng
+    (<span id="cart-count">0</span>)
+</div>
+    </header>
+
+
+    <!-- BANNER -->
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+            <p class="subtitle">WELCOME TO BLOOM FLOWER</p>
+
+            <h1>
+                Trao yêu thương<br>
+                Qua những đóa hoa
+            </h1>
+
+            <p>
+                Những bó hoa tươi đẹp nhất dành
+                tặng những người bạn yêu thương.
+            </p>
+
+            <a href="#products" class="btn">
+                Khám phá ngay
+            </a>
+        </div>
+
+        <div class="hero-image">
+            <img
+                src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=900"
+                alt="Bó hoa tươi Bloom Flower">
+        </div>
+
+    </section>
+
+
+    <!-- DANH MỤC -->
+    <section class="categories" id="categories">
+
+        <h2>Danh mục hoa</h2>
+
+        <p class="section-desc">
+            Lựa chọn những loài hoa bạn yêu thích
+        </p>
+
+        <div class="category-list">
+
+            <div class="category-item">
+                <span>🌹</span>
+                <h3>Hoa hồng</h3>
+            </div>
+
+            <div class="category-item">
+                <span>🌷</span>
+                <h3>Hoa tulip</h3>
+            </div>
+
+            <div class="category-item">
+                <span>🌻</span>
+                <h3>Hoa hướng dương</h3>
+            </div>
+
+            <div class="category-item">
+                <span>💐</span>
+                <h3>Hoa sinh nhật</h3>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SẢN PHẨM -->
+    
+<!-- SẢN PHẨM -->
+<section class="products" id="products">
+
+    <h2>Sản phẩm nổi bật</h2>
+
+    <p class="section-desc">
+        Những bó hoa được yêu thích nhất
+    </p>
+
+    <div class="product-list">
+
+        <!-- SẢN PHẨM 1 -->
+        <div class="product-card" data-product-id="1">
+            <img
+                src="https://images.unsplash.com/photo-1494972308805-463bc619d34e?w=600"
+                alt="Hoa hồng">
+
+            <div class="product-info">
+                <h3>Bó hoa hồng tình yêu</h3>
+                <p class="price">350.000đ</p>
+                <button type="button" class="buy-btn">
+                    Thêm vào giỏ
+                </button>
+            </div>
+        </div>
+
+        <!-- SẢN PHẨM 2 -->
+        <div class="product-card" data-product-id="2">
+            <img
+                src="https://images.unsplash.com/photo-1520763185298-1b434c919102?w=600"
+                alt="Hoa tulip">
+
+            <div class="product-info">
+                <h3>Bó hoa tulip pastel</h3>
+                <p class="price">450.000đ</p>
+                <button type="button" class="buy-btn">
+                    Thêm vào giỏ
+                </button>
+            </div>
+        </div>
+
+        <!-- SẢN PHẨM 3 -->
+        <div class="product-card" data-product-id="3">
+            <img
+                src="https://images.unsplash.com/photo-1508610048659-a06b669e3321?w=600"
+                alt="Hoa hướng dương">
+
+            <div class="product-info">
+                <h3>Bó hoa hướng dương</h3>
+                <p class="price">300.000đ</p>
+                <button type="button" class="buy-btn">
+                    Thêm vào giỏ
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- GIỎ HÀNG -->
+<section class="shopping-cart" id="shopping-cart">
+
+    <h2>🛒 Giỏ hàng của bạn</h2>
+
+    <div id="cart-items">
+        <p class="empty-cart">
+            Giỏ hàng của bạn đang trống!
+        </p>
+    </div>
+
+    <div class="cart-total">
+        <h3>
+            Tổng tiền:
+            <span id="cart-total">0đ</span>
+        </h3>
+    </div>
+
+    <button class="clear-btn" onclick="clearCart()">
+        Xóa toàn bộ giỏ hàng
+    </button>
+
+<!-- FORM ĐẶT HÀNG -->
+<div class="checkout">
+
+    <h2>Thông tin đặt hàng</h2>
+
+    <form id="order-form">
+
+        <div class="form-group">
+            <label>Họ và tên khách hàng</label>
+            <input
+                type="text"
+                id="customer-name"
+                placeholder="Nhập họ và tên..."
+                required>
+        </div>
+
+        <div class="form-group">
+            <label>Số điện thoại</label>
+            <input
+                type="tel"
+                id="customer-phone"
+                placeholder="Nhập số điện thoại..."
+                pattern="[0-9]{10,11}"
+                required>
+        </div>
+
+        <div class="form-group">
+            <label>Địa chỉ giao hàng</label>
+            <textarea
+                id="customer-address"
+                placeholder="Nhập địa chỉ nhận hoa..."
+                required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label>Ghi chú đơn hàng</label>
+            <textarea
+                id="customer-note"
+                placeholder="Ví dụ: Giao hoa vào buổi chiều...">
+            </textarea>
+        </div>
+
+        <button type="submit" class="order-btn">
+            Xác nhận đặt hàng
+        </button>
+
+    </form>
+
+    <div id="order-result"></div>
+
+</div>
+
+</section>
+
+
+    <!-- FOOTER -->
+    <footer id="contact">
+
+        <h2>🌸 Bloom Flower</h2>
+
+        <p>Trao yêu thương qua những đóa hoa.</p>
+
+        <p>Hotline: 0395 449 068</p>
+
+        <p>© 2026 Bloom Flower. All rights reserved.</p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>

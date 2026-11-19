@@ -1,0 +1,951 @@
+
+/* ========================================
+   BLOOM FLOWER - GIAO DIỆN NÂNG CẤP
+======================================== */
+
+/* 1. CÀI ĐẶT CHUNG */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #fff9fb;
+    color: #51434a;
+    line-height: 1.6;
+}
+
+h2 {
+    color: #b83f70;
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+button {
+    font-family: inherit;
+}
+
+/* 2. HEADER */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 7%;
+    background: rgba(255,255,255,0.97);
+    box-shadow: 0 3px 18px rgba(150,70,100,0.08);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 27px;
+    font-weight: bold;
+    color: #c34c7a;
+    letter-spacing: 0.5px;
+}
+
+.navbar {
+    display: flex;
+    gap: 28px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #65545b;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.navbar a:hover {
+    color: #d65c8a;
+}
+
+.cart {
+    background: #fbe0e9;
+    color: #a83c68;
+    padding: 11px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.cart:hover {
+    background: #f5c5d7;
+    transform: translateY(-2px);
+}
+
+/* 3. BANNER */
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 85px 10%;
+    background: linear-gradient(120deg, #fde8ef, #fff3f6);
+    gap: 50px;
+}
+
+.hero-content {
+    flex: 1;
+}
+
+.subtitle {
+    color: #c34c7a;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.hero-content h1 {
+    color: #a83c68;
+    font-size: 48px;
+    line-height: 1.35;
+    margin-bottom: 22px;
+}
+
+.hero-content p {
+    line-height: 1.9;
+    color: #765b65;
+    font-size: 16px;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 28px;
+    background: linear-gradient(135deg, #d65c8a, #b83f70);
+    color: white;
+    padding: 15px 32px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 6px 16px rgba(184,63,112,0.2);
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 22px rgba(184,63,112,0.3);
+}
+
+.hero-image {
+    flex: 1;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 390px;
+    object-fit: cover;
+    border-radius: 28px;
+    box-shadow: 0 15px 35px rgba(120,50,80,0.15);
+}
+
+/* 4. DANH MỤC HOA */
+
+.categories {
+    padding: 75px 8%;
+}
+
+.section-desc {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 40px;
+    color: #92828a;
+}
+
+.category-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+.category-item {
+    background: white;
+    text-align: center;
+    padding: 35px 15px;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(150,70,100,0.07);
+    border: 1px solid #f9e7ed;
+    transition: 0.3s;
+}
+
+.category-item:hover {
+    transform: translateY(-9px);
+    background: #fff0f5;
+    box-shadow: 0 12px 25px rgba(150,70,100,0.12);
+}
+
+.category-item span {
+    font-size: 48px;
+}
+
+.category-item h3 {
+    margin-top: 15px;
+    color: #b83f70;
+}
+
+/* 5. SẢN PHẨM */
+
+.products {
+    padding: 75px 8%;
+    background: #fff0f5;
+}
+
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.product-card {
+    background: white;
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 0 6px 22px rgba(150,70,100,0.08);
+    border: 1px solid #f8e5ec;
+    transition: 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-9px);
+    box-shadow: 0 14px 30px rgba(150,70,100,0.15);
+}
+
+.product-card img {
+    width: 100%;
+    height: 270px;
+    object-fit: cover;
+    transition: 0.4s;
+}
+
+.product-card:hover img {
+    transform: scale(1.04);
+}
+
+.product-info {
+    padding: 25px;
+    text-align: center;
+}
+
+.product-info h3 {
+    color: #594750;
+    margin-bottom: 12px;
+    font-size: 19px;
+}
+
+.price {
+    color: #c34c7a;
+    font-size: 21px;
+    font-weight: bold;
+    margin-bottom: 18px;
+}
+
+.buy-btn {
+    border: none;
+    background: linear-gradient(135deg, #d65c8a, #b83f70);
+    color: white;
+    padding: 13px 28px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.buy-btn:hover {
+    background: #a83c68;
+    transform: translateY(-3px);
+}
+
+/* 6. GIỎ HÀNG */
+
+.shopping-cart {
+    display: none;
+    background: white;
+    padding: 40px 8%;
+    margin: 45px auto;
+    max-width: 1100px;
+    border-radius: 22px;
+    box-shadow: 0 8px 28px rgba(150,70,100,0.09);
+}
+
+.shopping-cart.show {
+    display: block;
+}
+
+.shopping-cart h2 {
+    margin-bottom: 30px;
+}
+
+.empty-cart {
+    text-align: center;
+    color: #999;
+    padding: 25px;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    margin-bottom: 15px;
+    background: #fff2f6;
+    border-radius: 15px;
+}
+
+.cart-item h3 {
+    color: #b83f70;
+    margin-bottom: 8px;
+}
+
+.cart-item p {
+    color: #777;
+}
+
+.remove-btn {
+    border: none;
+    background: #e85d75;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.remove-btn:hover {
+    background: #c93658;
+}
+
+.cart-total {
+    text-align: right;
+    padding: 25px 0;
+}
+
+.cart-total h3 {
+    color: #b83f70;
+    font-size: 23px;
+}
+
+.clear-btn {
+    border: none;
+    background: #f8d6e3;
+    color: #a83c68;
+    padding: 12px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.clear-btn:hover {
+    background: #f3b6cd;
+}
+
+/* 7. FORM ĐẶT HÀNG */
+
+.checkout {
+    background: #fff8fa;
+    padding: 35px;
+    margin-top: 40px;
+    border-radius: 20px;
+    border: 1px solid #f9e5ed;
+}
+
+.checkout h2 {
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    color: #a83c68;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #efc3d3;
+    border-radius: 12px;
+    outline: none;
+    font-size: 15px;
+    font-family: Arial, sans-serif;
+    background: white;
+    transition: 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #c34c7a;
+    box-shadow: 0 0 8px rgba(195,76,122,0.15);
+}
+
+.form-group textarea {
+    min-height: 90px;
+    resize: vertical;
+}
+
+.order-btn {
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(135deg, #d65c8a, #b83f70);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.order-btn:hover {
+    background: #a83c68;
+    transform: translateY(-2px);
+}
+
+#order-result {
+    margin-top: 25px;
+    color: #a83c68;
+    line-height: 1.8;
+}
+
+/* 8. FOOTER */
+
+footer {
+    background: linear-gradient(135deg, #b83f70, #92345d);
+    color: white;
+    text-align: center;
+    padding: 45px 20px;
+}
+
+footer h2 {
+    color: white;
+    margin-bottom: 15px;
+}
+
+footer p {
+    margin: 10px 0;
+}
+
+/* 9. RESPONSIVE - TABLET */
+
+@media (max-width: 900px) {
+    .category-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .product-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero {
+        padding: 60px 6%;
+    }
+
+    .hero-content h1 {
+        font-size: 38px;
+    }
+}
+
+/* 10. RESPONSIVE - ĐIỆN THOẠI */
+
+@media (max-width: 600px) {
+    .header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 18px 5%;
+    }
+
+    .navbar {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .navbar a {
+        font-size: 14px;
+    }
+
+    .hero {
+        flex-direction: column;
+        padding: 45px 6%;
+        gap: 30px;
+    }
+
+    .hero-content h1 {
+        font-size: 32px;
+    }
+
+    .hero-image img {
+        height: 250px;
+    }
+
+    .categories,
+    .products {
+        padding: 50px 6%;
+    }
+
+    .category-list {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+    }
+
+    .category-item {
+        padding: 25px 10px;
+    }
+
+    .product-list {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .product-card img {
+        height: 250px;
+    }
+
+    .shopping-cart {
+        margin: 25px 12px;
+        padding: 25px 18px;
+    }
+
+    .cart-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .cart-total {
+        text-align: center;
+    }
+
+    .checkout {
+        padding: 22px 16px;
+    }
+
+    h2 {
+        font-size: 26px;
+    }
+}
+
+/* ========================================
+   11. ĐIỂM NHẤN XANH PASTEL
+======================================== */
+
+/* Banner hồng pha xanh nhẹ */
+.hero {
+    background: linear-gradient(
+        120deg,
+        #fde8ef,
+        #f0f8ef
+    );
+}
+
+/* Màu xanh cho dòng giới thiệu */
+.subtitle {
+    color: #729b78;
+}
+
+/* Giá sản phẩm */
+.price {
+    color: #729b78;
+}
+
+/* Viền xanh nhẹ cho danh mục */
+.category-item {
+    border-bottom: 3px solid #c8dfc8;
+}
+
+/* Hiệu ứng danh mục */
+.category-item:hover {
+    border-bottom-color: #83ad89;
+}
+
+/* Nền nhẹ cho khu vực đặt hàng */
+.checkout {
+    border: 1px solid #dcebdc;
+}
+
+/* Viền ô nhập liệu */
+.form-group input,
+.form-group textarea {
+    border-color: #d5e5d5;
+}
+
+/* Khi bấm vào ô nhập */
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #83ad89;
+    box-shadow: 0 0 7px rgba(131, 173, 137, 0.2);
+}
+
+/* ========================================
+   12. NÂNG CẤP KHU VỰC SẢN PHẨM
+======================================== */
+
+/* Nền xanh lá pastel nhẹ */
+.products {
+    background: linear-gradient(
+        135deg,
+        #f0f8ef,
+        #fff0f5
+    );
+}
+
+/* Khung sản phẩm */
+.product-card {
+    border: 1px solid #dcebdc;
+    box-shadow: 0 8px 22px rgba(90, 130, 90, 0.09);
+}
+
+/* Hiệu ứng khi di chuột */
+.product-card:hover {
+    border-color: #a9c9aa;
+    box-shadow: 0 14px 30px rgba(90, 130, 90, 0.16);
+}
+
+/* Tên sản phẩm */
+.product-info h3 {
+    color: #567b5c;
+}
+
+/* Giá sản phẩm */
+.price {
+    color: #729b78;
+}
+
+/* Nút mua hàng vẫn giữ màu hồng */
+.buy-btn {
+    background: linear-gradient(
+        135deg,
+        #d65c8a,
+        #b83f70
+    );
+}
+
+.buy-btn:hover {
+    background: #a83c68;
+}
+
+/* ========================================
+   13. NÂNG CẤP GIỎ HÀNG
+======================================== */
+
+.shopping-cart {
+    background: linear-gradient(
+        135deg,
+        #ffffff,
+        #f3faf2
+    );
+    border: 1px solid #dcebdc;
+    box-shadow: 0 10px 30px rgba(90, 130, 90, 0.10);
+}
+
+.shopping-cart h2 {
+    color: #b83f70;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #e5f0e3;
+}
+
+.cart-item {
+    background: #f1f8ef;
+    border: 1px solid #dcebdc;
+    border-radius: 16px;
+    transition: 0.3s;
+}
+
+.cart-item:hover {
+    background: #eaf4e8;
+    transform: translateY(-2px);
+}
+
+.cart-item h3 {
+    color: #628b68;
+}
+
+.cart-item p {
+    color: #777;
+    line-height: 1.8;
+}
+
+.remove-btn {
+    background: #e58aa5;
+    border-radius: 25px;
+    transition: 0.3s;
+}
+
+.remove-btn:hover {
+    background: #c34c7a;
+    transform: translateY(-2px);
+}
+
+.cart-total {
+    border-top: 1px dashed #c8dfc8;
+    margin-top: 15px;
+}
+
+.cart-total h3 {
+    color: #729b78;
+}
+
+.clear-btn {
+    background: #e5f1e3;
+    color: #628b68;
+    border: 1px solid #c8dfc8;
+    transition: 0.3s;
+}
+
+.clear-btn:hover {
+    background: #cfe5cd;
+}
+
+/* ========================================
+   14. NÂNG CẤP THANH TOÁN
+======================================== */
+
+.checkout {
+    background: linear-gradient(
+        135deg,
+        #fff5f8,
+        #f1f8ef
+    );
+    border: 1px solid #e3eee0;
+    box-shadow: 0 5px 18px rgba(90, 130, 90, 0.06);
+}
+
+.checkout h2 {
+    color: #b83f70;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #e5f0e3;
+}
+
+.form-group label {
+    color: #628b68;
+}
+
+.form-group input,
+.form-group textarea {
+    border: 1px solid #d5e5d5;
+    border-radius: 12px;
+    background: #ffffff;
+    transition: 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #83ad89;
+    box-shadow: 0 0 8px rgba(131, 173, 137, 0.2);
+}
+
+.order-btn {
+    background: linear-gradient(
+        135deg,
+        #d65c8a,
+        #b83f70
+    );
+    box-shadow: 0 6px 15px rgba(184, 63, 112, 0.18);
+    transition: 0.3s;
+}
+
+.order-btn:hover {
+    background: linear-gradient(
+        135deg,
+        #b83f70,
+        #96345e
+    );
+    transform: translateY(-3px);
+    box-shadow: 0 9px 20px rgba(184, 63, 112, 0.25);
+}
+
+#order-result {
+    background: #eef7ec;
+    border-radius: 12px;
+    padding: 12px;
+    color: #628b68;
+}
+
+/* ========================================
+   15. HIỂN THỊ GIỎ HÀNG TRÊN ĐIỆN THOẠI
+======================================== */
+
+@media (max-width: 600px) {
+    .shopping-cart {
+        padding: 25px 16px;
+        border-radius: 16px;
+    }
+
+    .cart-item {
+        padding: 16px;
+        gap: 12px;
+    }
+
+    .cart-total h3 {
+        font-size: 20px;
+    }
+
+    .checkout {
+        padding: 22px 16px;
+    }
+
+    .order-btn {
+        padding: 15px;
+    }
+}
+
+/* ========================================
+   16. HOÀN THIỆN GIAO DIỆN THANH TOÁN
+======================================== */
+
+/* Khung giỏ hàng */
+.shopping-cart {
+    background: #f0f8ef;
+    border: 2px solid #c8dfc8;
+    border-radius: 22px;
+}
+
+/* Tiêu đề giỏ hàng */
+.shopping-cart > h2 {
+    color: #628b68;
+}
+
+/* Khung thông tin đặt hàng */
+.checkout {
+    background: linear-gradient(
+        135deg,
+        #eaf5e8,
+        #fff1f6
+    );
+    border: 2px solid #c8dfc8;
+    border-top: 5px solid #83ad89;
+    border-radius: 20px;
+    padding: 35px;
+}
+
+/* Tiêu đề thanh toán */
+.checkout h2 {
+    color: #b83f70;
+}
+
+/* Nhãn thông tin */
+.form-group label {
+    color: #527c59;
+}
+
+/* Ô nhập thông tin */
+.form-group input,
+.form-group textarea {
+    background: #ffffff;
+    border: 1.5px solid #b9d5b9;
+    border-radius: 12px;
+}
+
+/* Hiệu ứng ô nhập */
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #729b78;
+    box-shadow: 0 0 10px rgba(114, 155, 120, 0.25);
+}
+
+/* Nút xác nhận */
+.order-btn {
+    background: linear-gradient(
+        135deg,
+        #d65c8a,
+        #b83f70
+    );
+    border-radius: 30px;
+    padding: 17px;
+    box-shadow: 0 6px 15px rgba(184, 63, 112, 0.2);
+}
+
+.order-btn:hover {
+    background: #a83c68;
+}
+
+/* Thông báo đặt hàng */
+#order-result {
+    background: #e1f0df;
+    color: #527c59;
+    border: 1px solid #c8dfc8;
+    border-radius: 12px;
+    padding: 15px;
+}
+
+/* ========================================
+   17. FOOTER - CHÂN TRANG BLOOM FLOWER
+======================================== */
+
+footer {
+    background: linear-gradient(
+        135deg,
+        #b83f70,
+        #96345e
+    );
+
+    color: white;
+    text-align: center;
+
+    padding: 55px 20px 30px;
+    margin-top: 0;
+
+    border-top: 5px solid #a9c9aa;
+}
+
+/* Tiêu đề cửa hàng */
+footer h2 {
+    color: white;
+    font-size: 30px;
+    margin-bottom: 18px;
+}
+
+/* Nội dung chân trang */
+footer p {
+    color: #ffeaf1;
+    font-size: 15px;
+    margin: 12px 0;
+    line-height: 1.8;
+}
+
+/* Đường phân cách */
+footer p:last-child {
+    border-top: 1px solid rgba(255,255,255,0.25);
+    padding-top: 20px;
+    margin-top: 25px;
+    color: #f8d6e3;
+    font-size: 13px;
+}
+
+/* Hiệu ứng chung */
+footer h2,
+footer p {
+    transition: 0.3s;
+}
+
+/* Điện thoại */
+@media (max-width: 600px) {
+    footer {
+        padding: 40px 15px 25px;
+    }
+
+    footer h2 {
+        font-size: 25px;
+    }
+
+    footer p {
+        font-size: 14px;
+    }
+}
